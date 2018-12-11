@@ -1,0 +1,25 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Reborn Generator",
+      "identifier": "main",
+      "script": "reborn.js"
+    }
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": [
+      "main"
+    ]
+  },
+  "version": "1.0.0",
+  "description": "",
+  "name": "react-sketchapp-starter",
+  "identifier": "react-sketchapp-starter",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
+  "author": "Matt Born",
+  "authorEmail": "code@mattborn.com"
+}
