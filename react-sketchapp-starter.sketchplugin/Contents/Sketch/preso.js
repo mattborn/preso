@@ -86,7 +86,7 @@ var exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/reborn.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/preso.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -43712,91 +43712,10 @@ module.exports = function (bind, lib) {
 
 /***/ }),
 
-/***/ "./src/Square.js":
-/*!***********************!*\
-  !*** ./src/Square.js ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_sketchapp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-sketchapp */ "./node_modules/react-sketchapp/lib/index.js");
-/* harmony import */ var react_sketchapp__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_sketchapp__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-var Minimal = function Minimal() {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_1__["Artboard"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_1__["Text"], null, "Minimal.js"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Minimal);
-
-/***/ }),
-
-/***/ "./src/data.js":
-/*!*********************!*\
-  !*** ./src/data.js ***!
-  \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ([{
-  main: "Just Keep Swimming"
-}, {
-  main: "Just Keep Swimming\n—\nHebrews 12:1–2"
-}, {
-  main: "Just Keep Swimming\nRidgeline Church\nSalt Lake City\nDecember 9, 2018"
-}, {
-  main: "The Gospel According to Nemo"
-}, {
-  main: "By faith…"
-}, {
-  main: "I’m not here for commenting, I’m here to read the comments."
-}, {
-  main: "God has a very special affect for those whose lives are marked by defeat."
-}, {
-  main: "From losers to leaders. From zeroes to heroes."
-}, {
-  main: "Just Keep Swimming"
-}, {
-  main: "Just. \nIn order to move forward, you need to Let Go of those things that hold you back."
-}, {
-  main: "In order to move forward, you need to Let Go of those things that hold you back."
-}, {
-  main: "Spiritual Fatigue."
-}, {
-  main: "Keep. \nThere is no better time than right now to Let Loose on the journey God has for you."
-}, {
-  main: "There is no better time than right now to Let Loose on the journey God has for you."
-}, {
-  main: "In the early phases of a changing relationship, one-day-at-a-time is about as good as you can do."
-}, {
-  main: "God doesn’t care about the pace, only that you have a pace."
-}, {
-  main: "God is already deeply enamored by you."
-}, {
-  main: "Swimming. \nOnce you’ve started don’t look back, don’t look forward, just Look Up to Jesus, He has everything you need."
-}, {
-  main: "The gospel story is living water. Be fully immersed. Be all in!"
-}, {
-  main: "All in."
-}, {
-  main: "The mechanics of swimming are the same as the mechanics of faith."
-}, {
-  main: "Bible. Body of believers. Breathe."
-}]);
-
-/***/ }),
-
-/***/ "./src/reborn.js":
-/*!***********************!*\
-  !*** ./src/reborn.js ***!
-  \***********************/
+/***/ "./src/preso.js":
+/*!**********************!*\
+  !*** ./src/preso.js ***!
+  \**********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -43808,90 +43727,185 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_sketchapp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-sketchapp */ "./node_modules/react-sketchapp/lib/index.js");
 /* harmony import */ var react_sketchapp__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sketchapp__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data */ "./src/data.js");
-/* harmony import */ var _Square__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Square */ "./src/Square.js");
+/* harmony import */ var _slides__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slides */ "./src/slides.js");
 
 
 
 
 
+var getSizes = function getSizes(width) {
+  var u = width / 16;
+  var h = u * 10;
+  return {
+    height: h,
+
+    /* 16:10 */
+    quarter: u / 4,
+    unit: u,
+    width: width
+  };
+};
+
+var sizes = getSizes(2560);
 var styles = {
   page: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    width: 600 * 5
+    width: (sizes.width + sizes.width % 100) * 1
+    /* # columns */
+
   },
   artboard: {
-    height: 540,
-    marginBottom: 60,
-    marginRight: 60,
-    width: 540
+    height: sizes.height,
+    marginBottom: 100 - sizes.height % 100,
+    marginRight: 100 - sizes.width % 100,
+    padding: sizes.unit,
+    width: sizes.width
+  },
+  headline: {
+    marginBottom: sizes.unit
   },
   text: {
-    left: 60,
-    position: 'absolute',
-    top: 60,
-    width: 420
-  },
-  mark: {
-    fillColor: '#081624',
-    height: 38,
-    width: 38
-  },
-  markPos: {
-    left: 10,
-    position: 'absolute',
-    top: 10
-  },
-  photo: {
-    height: '100%',
     width: '100%'
+  },
+  image: {
+    borderColor: '#BBCCDD',
+    borderWidth: 1,
+    height: sizes.height - sizes.unit * 4,
+    flex: 1,
+    marginLeft: sizes.unit,
+    minWidth: sizes.unit * 4,
+    shadowColor: '#081624',
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: .1,
+    shadowRadius: 30,
+    width: 'auto'
+  },
+  footer: {
+    alignItems: 'center',
+    backgroundColor: '#081624',
+    bottom: 0,
+    flexDirection: 'row',
+    height: sizes.unit * 2,
+    left: 0,
+    paddingLeft: sizes.unit,
+    paddingRight: sizes.unit,
+    position: 'absolute',
+    width: sizes.width
+  },
+  footerText: {
+    flex: 1
   }
 };
 var typeStyles = {
   Headline: {
     color: '#081624',
-    fontSize: 60,
-    fontFamily: 'Platform',
+    fontSize: sizes.quarter * 6,
+    fontFamily: 'Circular Std',
+    fontWeight: 700,
+    letterSpacing: -10,
+    lineHeight: sizes.quarter * 6
+  },
+  Body: {
+    color: '#081624',
+    fontSize: sizes.quarter * 3,
+    fontFamily: 'Circular Std',
+    fontWeight: 700,
+    letterSpacing: -5,
+    lineHeight: sizes.quarter * 3.5
+  },
+  Footer: {
+    color: '#FFFFFF',
+    fontSize: sizes.quarter * 2,
+    fontFamily: 'Circular Std',
     fontWeight: 700,
     letterSpacing: -2,
-    lineHeight: 60
+    lineHeight: sizes.quarter * 3
   }
+}; // if background is too dark, use light text color
+
+var getTextColor = function getTextColor(hex) {
+  /* TODO */
 };
-var Mark = Object(react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["makeSymbol"])(function () {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Svg"], {
-    style: styles.mark,
-    viewBox: "0 0 38 38"
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Svg"].G, {
-    fill: "#081624"
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Svg"].Path, {
-    d: "M23.1881549,20 L54.8118451,20 C56.5726144,20 58,21.4273856 58,23.1881549 C58,24.0337061 57.6641061,24.8446258 57.0662111,25.4425208 L25.4425208,57.0662111 C24.1974689,58.311263 22.1788409,58.311263 20.9337889,57.0662111 C20.3358939,56.468316 20,55.6573964 20,54.8118451 L20,23.1881549 C20,21.4273856 21.4273856,20 23.1881549,20 Z"
-  })));
-}, 'Mark');
+
+var sections = []; // loop to register all sections
+
+_slides__WEBPACK_IMPORTED_MODULE_3__["default"].forEach(function (obj) {
+  var s = obj.section;
+
+  if (s && sections.indexOf(s) === -1) {
+    sections.push(s);
+  }
+});
+
+var Footer = function Footer(_ref) {
+  var current = _ref.current;
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["View"], {
+    style: styles.footer
+  }, sections.map(function (section, i) {
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+      key: i,
+      style: Object.assign({}, typeStyles.Footer, styles.footerText, {
+        opacity: section === current ? 1 : .3
+      })
+    }, section);
+  }));
+}; // the artboard and content for each slide
+
+
+var Slide = function Slide(_ref2) {
+  var background = _ref2.background,
+      headline = _ref2.headline,
+      image = _ref2.image,
+      name = _ref2.name,
+      section = _ref2.section,
+      text = _ref2.text;
+  var headlineSlide = headline ? {
+    paddingRight: sizes.unit * 4
+  } : {};
+  var imageSlide = image ? {
+    flexDirection: 'row'
+  } : {};
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Artboard"], {
+    name: name,
+    style: Object.assign({}, styles.artboard, headlineSlide, imageSlide, {
+      backgroundColor: '#' + background
+    })
+  }, headline && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    style: Object.assign(typeStyles.Headline, styles.headline)
+  }, headline), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    style: typeStyles.Body
+  }, text), image && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Image"], {
+    resizeMode: "contain",
+    source: image,
+    style: styles.image
+  }), section && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Footer, {
+    current: section
+  }));
+}; // this is the last stop before we render to Sketch
+
 
 var Document = function Document() {
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Page"], {
-    name: "Page One",
+    name: "Slides",
     style: styles.page
-  }, _data__WEBPACK_IMPORTED_MODULE_3__["default"].map(function (a, i) {
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Artboard"], {
+  }, _slides__WEBPACK_IMPORTED_MODULE_3__["default"].map(function (obj, i) {
+    var b = obj.background || '#FFFFFF';
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Slide, {
+      background: b,
+      headline: obj.headline,
+      image: obj.image,
       key: i,
-      name: 'Square-' + (i + 1),
-      style: styles.artboard
-    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Image"], {
-      resizeMode: "contain",
-      source: 'https://picsum.photos/540?id=' + i,
-      style: styles.photo
-    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Mark, {
-      style: styles.markPos
-    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["View"], {
-      name: "Item",
-      style: styles.text
-    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["Text"], {
-      style: typeStyles.Headline
-    }, a.main)));
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Square__WEBPACK_IMPORTED_MODULE_4__["default"], null));
-};
+      name: 'Slide-' + (i + 1),
+      section: obj.section,
+      text: obj.text
+    });
+  }));
+}; // send everything to Sketch!
+
 
 /* harmony default export */ __webpack_exports__["default"] = (function (context) {
   react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["TextStyles"].create({
@@ -43900,6 +43914,135 @@ var Document = function Document() {
   }, typeStyles);
   Object(react_sketchapp__WEBPACK_IMPORTED_MODULE_2__["render"])(react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Document, null), context.document.currentPage());
 });
+
+/***/ }),
+
+/***/ "./src/slides.js":
+/*!***********************!*\
+  !*** ./src/slides.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  background: "FFB819",
+  headline: "Hi, Jon!\nI’m Matt. 👋🏼",
+  section: "Intro",
+  text: "This is an introduction & three stories about my past work."
+}, {
+  section: "Intro",
+  text: "I’ve been a product designer for ~7 years. Before that I was a web designer for ~10 years both as a freelancer and with tiny agencies. I have a BFA in Graphic Design from The Illinois Institute of Art and moved to Utah from Chicago in January 2018."
+}, {
+  section: "Intro",
+  text: "My last role was Product Design Manager at Sprout Social and I’m excited to be embedded on a teem* once again with people who care deeply about solving meaningful problems for humans.\n\n*😉"
+}, {
+  section: "Project",
+  background: "00DDCC",
+  headline: "Standing the Test of Time.",
+  text: "A story about how taking risks helped me early on as a designer."
+}, {
+  section: "Project",
+  text: "It’s late 2012. One of my first design projects at Sprout was improving our profile connection flow. This was the first step in the user journey for new users and a recurring behavior for existing users."
+}, {
+  image: "https://www.dropbox.com/s/2ogxlmjwzt1jeh6/web-2.0-federated-social-login.png?raw=1",
+  section: "Project",
+  text: "Problems\n—\n· Inconsistent flows across entry points\n· Error-prone (lots of support requests)\n· Web 2.0 federated login trend"
+}, {
+  section: "Project",
+  text: "Challenges\n—\n· Similar experiences with no UX patterns\n· Limited control over experience\n· Knew nothing about design thinking\n· No way to release to customer segment"
+}, {
+  section: "Project",
+  text: "Process\n—\n1. Design some screens in Illustrator\n2. Guess at what might solve the problem\n3. Show my boss and ask what he thought\n4. Write all the UI and interaction code\n5. Go straight to production 😬"
+}, {
+  image: "https://www.dropbox.com/s/cu5hex2jkj195ms/Sprout-Connect-Dark.png?raw=1",
+  section: "Project",
+  text: "(After)\n—"
+}, {
+  section: "Project",
+  text: "Immediate outcomes\n—\n· Support tickets went down\n· Recognition from internal teams\n· Competitors copied us\n· Earned more responsibility"
+}, {
+  section: "Project",
+  text: "Long-term outcomes\n—\n· Decisions endured after future iterations\n· UX patterns reused across products\n· Accelerated future adjustments"
+}, {
+  image: "https://www.dropbox.com/s/jsv2g2bw57yw4ej/Sprout-Connect-Today.png?raw=1",
+  section: "Project",
+  text: "(Today)\n—"
+}, {
+  background: "FABB00",
+  headline: "In Users\nWe Trust.",
+  section: "Research",
+  text: "A story about how research prevailed in an unexpected way."
+}, {
+  section: "Research",
+  text: "Formal research was not something I did when I first became a product designer. Rapid prototyping and production validation was how I achieved early success as a product designer. In late 2015, one of the designers I helped hire introduced me to Design Thinking…"
+}, {
+  section: "Research",
+  text: "2016\n—\n· March — GV Sprint book\n· May — Kai Haley @ Google I/O\n· July — Facilitated first sprint\n· September — Facilitated second sprint\n· October — Organized first ever design sprint at Sprout Social"
+}, {
+  section: "Research",
+  text: "Problem\n—\nFast forward to early this year. User adoption was terrible for some customers and they wanted us to figure out why their employees were not logging in and sharing the content they curated every week."
+}, {
+  section: "Research",
+  text: "Challenges\n—\n· Adoption was great for some customers\n· Non-specific problem statement\n· Sales-driven org = no room on roadmap"
+}, {
+  section: "Research",
+  text: "Process\n—\n1. Schedule interviews with admins and users from diverse set of customers\n2. Research question: what is the most common pain point across our users now?\n3. Run interviews, synethsize, and share"
+}, {
+  section: "Research",
+  text: "What did we learn?\n—\nAfter 2 weeks, we became more certain about one major issue hurting adoption for some customers—curators ignoring the curation note."
+}, {
+  image: "https://www.dropbox.com/s/mrv8qllve0x7kpw/Bambu-Curator-Note.png?raw=1",
+  section: "Research",
+  text: "Email to \nparticipants\n—"
+}, {
+  section: "Research",
+  text: "Outcomes\n—\n· UX WIN — curator note FTW\n· Account services & sales WIN\n· Squad, PM & PMK WIN\n· Design chapter WIN\n· Customer & user meta WIN"
+}, {
+  background: "FF5555",
+  headline: "All Design is Systems Design.",
+  section: "Systems",
+  text: "A story about how I learned the hard way what matters most."
+}, {
+  section: "Systems",
+  text: "A couple years before Sprout, I learned Ruby on Rails which taught me an important engineering concept—Convention Over Configuration."
+}, {
+  section: "Systems",
+  text: "In my first year at Sprout, Sundeep—the developer who sat next to me—and I experimented with a component library called Myriad. It didn’t make it to production, but it planted a seed—how might we leverage reusable components?"
+}, {
+  section: "Systems",
+  text: "By my second year at Sprout, I had moved our app and marketing properties to a single type family, published our second style guide, and refactored thousands of lines of CSS to rely on a smaller set of reusable colors and components."
+}, {
+  section: "Systems",
+  text: "A series of false starts?\n—\nFirst production component library.\nComponents nobody used.\nDocumentation nobody read.\nValue nobody understood.\nRacine. Dearborn. Seeds."
+}, {
+  image: "https://www.dropbox.com/s/dwth3kn8kwy0bc8/Sprout-Brotado.png?raw=1",
+  section: "Systems",
+  text: "Brotado\n—"
+}, {
+  image: "https://www.dropbox.com/s/1sn77juer3fibe3/Bambu-Dearborn.png?raw=1",
+  section: "Systems",
+  text: "Dearborn\n—"
+}, {
+  image: "https://www.dropbox.com/s/380sev2bt23j4ol/Sprout-Seeds.png?raw=1",
+  section: "Systems",
+  text: "Seeds\n—"
+}, {
+  text: "Thank you!\n\nme@mattborn.com"
+}, {
+  background: "081624",
+  headline: "Oh, and one more thing…",
+  text: "Or several more things really."
+}, {
+  text: "Questions\n—\nHow much time should product and non-product people be spending with users?\n\nWhere do you see yourselves a year from now in regards to research and systems?\n\nThoughts on Airbnb’s integrated model?"
+}, {
+  text: "4 reasons why Teem is a shared dream\n—\n1. I’m a real user\n2. Hatch / Google Calendar — It’s important that I bring my passion to work every day.\n3. Designing the future of work and the corporation itself\n4. Working with my first follower"
+}, {
+  text: "Things I’ve learned lately\n—\nEveryone is a user researcher\nFeature requests = heatmap, not roadmap\n5-minute synthesis in 10 words or less\nService Design is insanely helpful\nIntegrated feels better than segregated\n80% external information\nUX can apply to people experiencing you"
+}, {
+  text: "Thanks again!\n\nme@mattborn.com"
+}]);
 
 /***/ })
 
@@ -43912,4 +44055,4 @@ var Document = function Document() {
 }
 that['onRun'] = __skpm_run.bind(this, 'default')
 
-//# sourceMappingURL=reborn.js.map
+//# sourceMappingURL=preso.js.map

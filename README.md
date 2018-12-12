@@ -1,30 +1,17 @@
-# Basic setup
+# Preso
 
 ## How to use
 
-Download the example or [clone the repo](http://github.com/airbnb/react-sketchapp):
+See [airbnb / react-sketchapp / examples / basic-setup](https://github.com/airbnb/react-sketchapp/tree/master/examples/basic-setup) for instructions on how to use this repo.
 
-```bash
-curl https://codeload.github.com/airbnb/react-sketchapp/tar.gz/master | tar -xz --strip=2 react-sketchapp-master/examples/basic-setup
-cd basic-setup
-```
+## Goals
 
-Install the dependencies
-
-```bash
-npm install
-```
-
-Then, open Sketch and navigate to `Plugins → react-sketchapp: Basic skpm Example`
-
-Run with live reloading in Sketch, need a new sketch doc open
-
-```bash
-npm run render
-```
-
-## The idea behind the example
-
-[`skpm`](https://github.com/skpm/skpm) is the easiest way to build `react-sketchapp` projects - this is a minimal example of it in use.
-
-![examples-basic](https://cloud.githubusercontent.com/assets/591643/24778192/1f0684ec-1ade-11e7-866b-b11bb60ac109.png)
+- [x] Loop through lines of text and render 1080p artboard for each
+- [x] Distinguish headline from body text
+- [ ] Include image in payload
+- [x] Include background color in payload
+- [ ] Automatically switch to light text with chroma.js
+- [ ] Track progress through section titles in footer
+- [ ] Render SVG strings from data file as Symbols
+- [ ] Multiple pages with different brand for each
+- [ ] Render to PDF

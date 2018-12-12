@@ -3,9 +3,9 @@
   "bundleVersion": 1,
   "commands": [
     {
-      "name": "Reborn Generator",
+      "name": "Preso",
       "identifier": "main",
-      "script": "reborn.js"
+      "script": "preso.js"
     }
   ],
   "menu": {
